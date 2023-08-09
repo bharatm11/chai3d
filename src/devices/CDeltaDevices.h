@@ -203,6 +203,15 @@ public:
     //! This method returns the gripper angle in radian [rad].
     virtual bool getGripperAngleRad(double& a_angle);
 
+    //! this method returns the gripper angular velocity in radian/s
+    virtual bool getGripperAngularVelocity(double& a_velocity);
+
+    //! This method returns the thumb position
+    virtual bool getGripperThumbPos(cVector3d& a_position);
+
+    //! This method returns the fingertip position
+    virtual bool getGripperFingerPos(cVector3d& a_position);
+
     //! This method returns the status of all user switches [__true__ = __ON__ / __false__ = __OFF__].
     virtual bool getUserSwitches(unsigned int& a_userSwitches);
 
@@ -318,6 +327,7 @@ protected:
     static bool s_dhdSetForceAndTorqueAndGripperForce;
     static bool s_dhdGetGripperThumbPos;
     static bool s_dhdGetGripperFingerPos;
+    static bool s_dhdGetGripperAngularVelocityRad;
     static bool s_dhdGetGripperAngleRad;
     static bool s_dhdEnableExpertMode;
     static bool s_dhdDisableExpertMode;
